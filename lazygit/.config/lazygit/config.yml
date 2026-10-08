@@ -32,3 +32,9 @@ git:
   diffRenderers:
     - colorArg: always
       command: delta --dark --paging=never
+
+keybinding:
+  universal:
+    # Disabling left, right, h and l (vim binding) to force myself to use tab
+    prevBlock: [<backtab>]
+    nextBlock: [<tab>]
