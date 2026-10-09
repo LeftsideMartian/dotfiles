@@ -56,3 +56,13 @@ zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'  # lowercase input matche
 for ZSH_FILE in "${ZDOTDIR:-$HOME}"/*.zsh(N); do
   source "${ZSH_FILE}"
 done
+
+# =========================================================
+# Path
+# =========================================================
+export PATH="/opt/homebrew/opt/nano/bin:$PATH"
+
+# =========================================================
+# Startup
+# =========================================================
+fastfetch

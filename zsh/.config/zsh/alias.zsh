@@ -14,7 +14,8 @@ alias ll='eza -lh --icons --git'
 alias la='eza -lah --icons auto --git'
 
 # Tree view
-alias tree='eza --tree --icons auto'
+alias tree='eza --tree --icons auto -I .git'
+alias treeall='eza --tree --icons auto -A'
 
 # Reuse ls completions for eza (avoids defining a separate completion function)
 compdef eza=ls
@@ -38,6 +39,7 @@ alias df='df -h'
 alias zshrc="$EDITOR $ZDOTDIR/.zshrc"
 alias szsh="source $ZDOTDIR/.zshrc"
 alias zshenv="$EDITOR $HOME/.zshenv"
+alias zshalias="$EDITOR $ZDOTDIR/alias.zsh"
 alias ghostconf="$EDITOR $XDG_CONFIG_HOME/ghostty/config.ghostty"
 
 # Copy shortcuts
