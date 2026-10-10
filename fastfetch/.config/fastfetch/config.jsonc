@@ -1,14 +1,15 @@
 {
 	"$schema": "https://github.com/fastfetch-cli/fastfetch/raw/master/doc/json_schema.json",
 	"logo": {
-		"type": "auto",
-		"source": "~/.config/fastfetch/img.txt",
-		"width": 50,
-		"height": 15,
+		"type": "chafa",
+		"source": "~/.config/fastfetch/img.png",
 		"padding": {
-			"top": 1,
-			"left": 10,
+			"top": 2,
+			"left": 6,
 			"right": 2,
+		},
+		"chafa": {
+			"symbols": "block",
 		},
 	},
 	"modules": [
@@ -21,7 +22,7 @@
 
 		{
 			"type": "custom",
-			"format": "   \u001b[90m┌──────────────────────\u001b[97mComputer\u001b[90m──────────────────────┐",
+			"format": "\u001b[90m┌──────────────────────\u001b[97mComputer\u001b[90m──────────────────────┐",
 		},
 		{
 			"type": "os",
