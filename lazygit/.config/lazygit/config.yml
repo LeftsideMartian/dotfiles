@@ -1,3 +1,5 @@
+# ~/.config/lazygit/config.yml
+
 gui:
   theme:
     activeBorderColor:

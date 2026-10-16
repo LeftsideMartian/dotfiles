@@ -1,3 +1,5 @@
+# ~/.config/zsh/fzf.zsh
+
 # =========================================================
 # fzf | Fuzzy finder
 # =========================================================
@@ -49,9 +51,21 @@ export FZF_DEFAULT_OPTS='
   --height=60%
   --layout=reverse
   --border=rounded
-  --prompt="  "
-  --pointer="  "
-  --preview-window=right:65%:wrap:border-left
+  --preview-window="border-rounded"
+  --separator="─"
+  --scrollbar="│"
+  --prompt=" "
+  --pointer="󱞩"
+  --gutter=" "
+
+  --color="bg:-1,fg:#FDFFF1"
+  --color="bg+:-1,fg+:#FDFFF1,gutter:-1"
+  --color="hl:#F92672,hl+:#F92672"
+  --color="info:#66D9EF,prompt:#A6E22E"
+  --color="pointer:#F92672,marker:#AE81FF"
+  --color="spinner:#E6DB74,header:#E6DB74"
+  --color="border:#6E7066,separator:#6E7066"
+  --color="scrollbar:#6E7066"
 '
 
 export _FZF_PREVIEW_CMD='bat --color=always --style=plain,numbers --line-range=:500 {}'

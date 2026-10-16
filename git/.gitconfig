@@ -1,3 +1,5 @@
+# ~/.gitconfig
+
 [user]
 	name = Matthew Adler
 	email = EMAIL_HERE

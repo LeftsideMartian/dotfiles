@@ -75,3 +75,7 @@ export HOMEBREW_BAT=1
 # Startup
 # =========================================================
 fastfetch
+
+if [[ -z "$TMUX" && -o interactive ]]; then
+  tmux
+fi
