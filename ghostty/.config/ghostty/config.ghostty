@@ -14,7 +14,7 @@ background-blur = 16
 background-image = ~/.config/ghostty/howlbg.jpeg
 background-image-position = center
 background-image-fit = cover
-background-image-opacity = 0.05
+background-image-opacity = 0.1
 
 # Command to run on ghostty startup (what shell to use)
 # Could replace this with a custom function if several startup items are needed?
