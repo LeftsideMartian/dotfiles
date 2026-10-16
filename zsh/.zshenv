@@ -32,7 +32,7 @@ fi
 # ==================================
 
 ## Editor
-export EDITOR="nano"
+export EDITOR="vim"
 export VISUAL="$EDITOR"
 
 ## GPG
