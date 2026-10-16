@@ -2,7 +2,7 @@
 
 # =========================
 # Aesthetics
-# ========================
+# =========================
 
 theme = Monokai Classic
 
@@ -15,6 +15,10 @@ background-image = ~/.config/ghostty/howlbg.jpeg
 background-image-position = center
 background-image-fit = cover
 background-image-opacity = 0.1
+
+# =========================
+# Config
+# =========================
 
 # Command to run on ghostty startup (what shell to use)
 # Could replace this with a custom function if several startup items are needed?

@@ -46,3 +46,7 @@ alias ghostconf="$EDITOR $XDG_CONFIG_HOME/ghostty/config.ghostty"
 alias cpy="pbcopy <" #MacOS
 
 alias vsc="code ."
+
+# Tmux
+alias tk="tmux kill-server"
+alias tm="tmux"

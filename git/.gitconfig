@@ -1,6 +1,6 @@
 [user]
-	name = Matt
-	email = matthew@adler.id.au
+	name = Matthew Adler
+	email = EMAIL_HERE
 [core]
 	editor = $EDITOR
 	pager = delta
@@ -12,4 +12,4 @@
 	side-by-side = true
 	navigate = true
 [interactive]
-	diffFilter = delte --color-only
+	diffFilter = delta --color-only

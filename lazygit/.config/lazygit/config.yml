@@ -1,40 +1,42 @@
 gui:
   theme:
     activeBorderColor:
-      - '#A6E22E'
+      - "#A6E22E"
       - bold
     searchingActiveBorderColor:
-      - '#E6DB74'
+      - "#E6DB74"
       - bold
     inactiveBorderColor:
-      - '#75715E'
+      - "#75715E"
     optionsTextColor:
-      - '#66D9EF'
+      - "#66D9EF"
     selectedLineBgColor:
-      - '#3E3D32'
+      - "#3E3D32"
     inactiveViewSelectedLineBgColor:
-      - '#3E3D32'
+      - "#3E3D32"
     cherryPickedCommitBgColor:
-      - '#3E3D32'
+      - "#3E3D32"
     cherryPickedCommitFgColor:
-      - '#AE81FF'
+      - "#AE81FF"
     markedBaseCommitBgColor:
-      - '#3E3D32'
+      - "#3E3D32"
     markedBaseCommitFgColor:
-      - '#F8F8F2'
+      - "#F8F8F2"
     unstagedChangesColor:
-      - '#F92672'
+      - "#F92672"
     defaultFgColor:
-      - '#F8F8F2'
+      - "#F8F8F2"
   showIcons: true
 
 git:
   diffRenderers:
     - colorArg: always
-      command: delta --dark --paging=never
+      command: delta --dark --paging=never --line-numbers --hyperlinks --syntax-theme="Monokai Extended"
 
 keybinding:
   universal:
     # Disabling left, right, h and l (vim binding) to force myself to use tab
     prevBlock: [<backtab>]
     nextBlock: [<tab>]
+
+notARepository: "skip"
