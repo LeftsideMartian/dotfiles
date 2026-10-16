@@ -1,0 +1,15 @@
+[user]
+	name = Matt
+	email = matthew@adler.id.au
+[core]
+	editor = $EDITOR
+	pager = delta
+[push]
+	autoSetupRemote = true
+[merge]
+	ff = true
+[delta]
+	side-by-side = true
+	navigate = true
+[interactive]
+	diffFilter = delte --color-only

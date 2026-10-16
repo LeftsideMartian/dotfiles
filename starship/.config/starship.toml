@@ -1,0 +1,84 @@
+# ~/.config/starship.toml
+
+"$schema" = "https://starship.rs/config-schema.json"
+
+# Monokai Classic palette
+palette = "monokai"
+
+# Prompt layout
+format = " $os \\[$directory$git_branch\\]$character"
+add_newline = false
+
+
+# ==============================
+# OS
+# ==============================
+
+[os]
+disabled = false
+style = "fg:text"
+format = "[$symbol]($style)"
+
+[os.symbols]
+Macos = " "
+
+# ==============================
+# Directory
+# ==============================
+
+[directory]
+truncation_symbol = " "
+truncation_length = 2
+truncate_to_repo = true
+style = "fg:frost"
+format = "[$path]($style)"
+
+
+# ==============================
+# Git repository
+# ==============================
+
+[git_branch]
+symbol = ""
+style = "fg:spark"
+format = " | [$symbol]($style)"
+
+
+# ==============================
+# Prompt character
+# ==============================
+
+[character]
+disabled = false
+success_symbol = "[\\$](fg:lime)"
+error_symbol = "[\\$](fg:lime)"
+vimcmd_symbol = "[\\$](fg:lime)"
+vimcmd_replace_one_symbol = "[\\$](fg:iris)"
+vimcmd_replace_symbol = "[\\$](fg:iris)"
+vimcmd_visual_symbol = "[\\$](fg:spark)"
+
+
+# ==============================
+# Monokai Classic
+# ==============================
+
+[palettes.monokai]
+
+# Semantic colours
+text   = "#F8F8F2"
+lime   = "#A6E22E"
+ember  = "#F92672"
+spark  = "#E6DB74"
+frost  = "#66D9EF"
+nova   = "#AE81FF"
+iris   = "#AE81FF"
+
+# Additional Monokai colours
+orange = "#FD971F"
+cyan   = "#66D9EF"
+purple = "#AE81FF"
+
+# Base colours
+base   = "#272822"
+mantle = "#272822"
+crust  = "#272822"
