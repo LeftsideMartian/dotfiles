@@ -67,7 +67,10 @@ export PATH="/opt/homebrew/opt/nano/bin:$PATH"
 # Homebrew
 # =========================================================
 
+HOMEBREW_UPDATE_HOURS=48
+
 export HOMEBREW_AUTO_UPDATE_QUIET=1
+export HOMEBREW_AUTO_UPDATE_SECS=$((HOMEBREW_UPDATE_HOURS * 3600))
 export HOMEBREW_NO_ANALYTICS=1
 export HOMEBREW_BAT=1
 

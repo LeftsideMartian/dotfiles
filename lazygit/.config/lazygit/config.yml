@@ -40,5 +40,7 @@ keybinding:
     # Disabling left, right, h and l (vim binding) to force myself to use tab
     prevBlock: [<backtab>]
     nextBlock: [<tab>]
+    prevBlock-alt: <disabled>
+    nextBlock-alt: <disabled>
 
 notARepository: "skip"

@@ -1,0 +1,6 @@
+# ~/.config/yazi/theme.toml
+
+[flavor]
+dark = "catppuccin-mocha"
+light = "catppuccin-mocha"
+

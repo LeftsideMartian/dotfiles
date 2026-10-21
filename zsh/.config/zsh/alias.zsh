@@ -50,3 +50,6 @@ alias vsc="code ."
 # Tmux
 alias tk="tmux kill-server"
 alias tm="tmux"
+
+# Yazi
+alias y="yazi"
