@@ -39,7 +39,7 @@ fi
 ### Config
 
 # Keybinds
-find_files="fd --type f --hidden --strip-cwd-prefix -L"
+find_files="fd --type f --strip-cwd-prefix -L"
 find_directories="fd --type d --hidden --follow --exclude .git -L"
 
 export FZF_DEFAULT_COMMAND="$find_files"

@@ -28,9 +28,8 @@ bindkey -e # Disable vi mode for zsh
 # Smart directory navigation
 # =========================================================
 
-# Disabling zoxide - renable if you are going to use it
 # Initialize zoxide
-# eval "$(zoxide init zsh)"
+eval "$(zoxide init --cmd cd zsh)"
 
 # =========================================================
 # Completion
@@ -77,7 +76,8 @@ export HOMEBREW_BAT=1
 # =========================================================
 # Startup
 # =========================================================
-fastfetch
+# Disable fastfetch for now
+# fastfetch
 
 if [[ -z "$TMUX" && -o interactive ]]; then
   tmux

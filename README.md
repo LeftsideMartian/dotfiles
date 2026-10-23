@@ -16,6 +16,7 @@
 | [delta](https://github.com/dandavison/delta)            | delta is a git diff renderer which makes git diffs bearable in the terminal                      |
 | [stow](https://www.gnu.org/software/stow/)              | stow is a symlink manager used in conjunction with this repository to manage configuration files |
 | [ripgrep](https://github.com/burntsushi/ripgrep)        | ripgrep is a replacement for the builtin grep command with greater speed                         | 
-| [yazi](https://github.com/burntsushi/ripgrep)        | yazi is a terminal file manager for navigating the file tree and creating and modifying files and directories |                     
+| [yazi](https://github.com/burntsushi/ripgrep)           | yazi is a terminal file manager for navigating the file tree and creating and modifying files and directories | 
+| [zoxide](https://github.com/ajeetdsouza/zoxide)         | zoxide provides directory movement utility (similar to cd) with indexing based on how frequent you visit directories |                     
 ## Setup
 

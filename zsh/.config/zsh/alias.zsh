@@ -52,4 +52,19 @@ alias tk="tmux kill-server"
 alias tm="tmux"
 
 # Yazi
-alias y="yazi"
+# Alias y to the following function; exit yazi with a cd into the current directory
+function y() {
+	local tmp cwd
+	tmp="$(mktemp -t "yazi-cwd.XXXXXX")" || return 1
+
+	command yazi "$@" --cwd-file="$tmp"
+
+	cwd="$(command cat -- "$tmp")"
+
+	if [[ -n "$cwd" && -d "$cwd" && "$cwd" != "$PWD" ]]; then
+		builtin cd "$cwd"
+	fi
+
+	command rm -f -- "$tmp"
+
+}
