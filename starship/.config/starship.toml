@@ -9,7 +9,6 @@ palette = "monokai"
 format = " $os \\[$directory$git_branch\\]$character"
 add_newline = false
 
-
 # ==============================
 # OS
 # ==============================
@@ -33,7 +32,6 @@ truncate_to_repo = true
 style = "fg:frost"
 format = "[$path]($style)"
 
-
 # ==============================
 # Git repository
 # ==============================
@@ -42,7 +40,6 @@ format = "[$path]($style)"
 symbol = ""
 style = "fg:spark"
 format = " | [$symbol]($style)"
-
 
 # ==============================
 # Prompt character
@@ -56,7 +53,6 @@ vimcmd_symbol = "[\\$](fg:lime)"
 vimcmd_replace_one_symbol = "[\\$](fg:iris)"
 vimcmd_replace_symbol = "[\\$](fg:iris)"
 vimcmd_visual_symbol = "[\\$](fg:spark)"
-
 
 # ==============================
 # Monokai Classic
