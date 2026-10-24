@@ -67,13 +67,18 @@ local options = {
   autoread = true,
 
   hidden = true,
+
+  -- Use system clipboard
+  clipboard = 'unnamedplus',
+
+  -- Faster scrolling
+  ttyfast = true,
+  smoothscroll = true,
+
+  title = true,
 }
 
 -- Load all above options
 for k, v in pairs(options) do
   vim.opt[k] = v
 end
-
--- Use system clipboard
--- Schedule for after nvim loads
-vim.schedule(function() vim.o.clipboard = 'unnamedplus' end)

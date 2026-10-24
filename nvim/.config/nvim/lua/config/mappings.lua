@@ -35,8 +35,15 @@ map('', leaderKey, '<Nop>')
 vim.g.mapleader = leaderKey
 vim.g.maplocalleader = leaderKey
 
-map(normalMode, '<leader>r', '<cmd>source $MYVIMRC<CR>', 'Reload Neovim config')
--- map(normalMode, '<leader>t', '<cmd>echo "Test"<CR>', 'Test keymap')
+-- Config keymaps
+map(normalMode, '<leader>cr', '<cmd>source $MYVIMRC<CR>', 'Reload Neovim config')
+map(normalMode, '<leader>cs', '<cmd>source %<CR>', 'Source current file')
+map(normalMode, '<leader>ln', function() -- Toggle relative line numbers
+  vim.wo.relativenumber = !vim.wo.relativenumber
+end)
+map(normalMode, '<leader><S-p>', function()
+  vim.o.list = !vim.o.list
+end)
 
 -- Buffer navigation with Ctrl + hjkl
 map(normalMode, '<C-h>', '<C-w>h')
@@ -58,9 +65,8 @@ map(normalMode, '<C-u>', '<C-u>zz')
 map(normalMode, '<C-d>', '<C-d>zz')
 
 -- Centre search terms
--- NOTE: A bit skeptical of the v on the end here
-map (normalMode, 'n', 'nzzv')
-map (normalMode, 'N', 'Nzzv')
+map (normalMode, 'n', 'nzz')
+map (normalMode, 'N', 'Nzz')
 
 -- Move selected lines up or down
 map(visualMode, 'J', '>+1<CR>gv=gv')
