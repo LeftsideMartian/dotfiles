@@ -32,7 +32,7 @@ fi
 # ==================================
 
 ## Editor
-export EDITOR="vim"
+export EDITOR="nvim"
 export VISUAL="$EDITOR"
 
 ## GPG
