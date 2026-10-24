@@ -8,6 +8,7 @@ theme = Monokai Classic
 
 font-family = "JetBrainsMono Nerd Font"
 font-size = 14
+font-feature = -calt
 
 background-opacity = 0.9
 background-blur = 16
@@ -25,6 +26,9 @@ background-image-opacity = 0.1
 command = zsh
 
 macos-option-as-alt = left
+macos-titlebar-proxy-icon = hidden
 
 confirm-close-surface = false
 quit-after-last-window-closed = true
+
+title = " "
