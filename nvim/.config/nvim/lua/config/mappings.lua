@@ -22,21 +22,14 @@ local normalMode = 'n'
 local visualMode = 'v'
 
 local function map(mode, key, action, desc)
-	vim.keymap.set(mode, key, action, {
+  vim.keymap.set(mode, key, action, {
     desc = desc,
-		noremap = true, -- When executing action, do not resolve action to another keymap
-		silent = true -- Do not show the keymap in the command area at bottom of screen
-	})
+    noremap = true, -- When executing action, do not resolve action to another keymap
+    silent = true -- Do not show the keymap in the command area at bottom of screen
+  })
 end
 
--- Set leader key
-local leaderKey = ' '
-map('', leaderKey, '<Nop>')
-vim.g.mapleader = leaderKey
-vim.g.maplocalleader = leaderKey
-
 -- Config keymaps
-map(normalMode, '<leader>cr', '<cmd>source $MYVIMRC<CR>', 'Reload Neovim config')
 map(normalMode, '<leader>cs', '<cmd>source %<CR>', 'Source current file')
 map(normalMode, '<leader>ln', function() -- Toggle relative line numbers
   vim.wo.relativenumber = !vim.wo.relativenumber
@@ -75,10 +68,10 @@ map(normalMode, '<C-k>', '<C-w>k')
 map(normalMode, '<C-l>', '<C-w>l')
 
 -- Move buffer with Ctrl + HJKL
-map(normalMode, '<C-H>', '<C-w>H')
-map(normalMode, '<C-J>', '<C-w>J')
-map(normalMode, '<C-K>', '<C-w>K')
-map(normalMode, '<C-L>', '<C-w>L')
+map(normalMode, '<C-S-H>', '<C-w>H')
+map(normalMode, '<C-S-J>', '<C-w>J')
+map(normalMode, '<C-S-K>', '<C-w>K')
+map(normalMode, '<C-S-L>', '<C-w>L')
 
 -- =================================
 -- Navigation
@@ -111,8 +104,71 @@ map(visualMode, '>', '>gv')
 map(visualMode, '<', '<gv')
 
 -- Move selected lines up or down
-map(visualMode, 'J', ":m '>+1<CR>gv=gv")
-map(visualMode, 'K', ":m '<-2<CR>gv=gv")
+map(visualMode, '<A-j>', ":m '>+1<CR>gv=gv")
+map(visualMode, '<A-k>', ":m '<-2<CR>gv=gv")
+
+-- Duplicate line
+map(visualMode, '<A-S-j>', ":t '><CR>gv=gv")
+map(visualMode, '<A-S-k>', ":t '<-1<CR>gv=gv")
 
 -- Select all
 map(normalMode, '<C-a>', 'ggVG')
+
+
+-- =================================
+-- Plugins
+-- =================================
+
+-- =========== Telescope ===========
+local telescope = require('telescope.builtin')
+
+local function find_project_files()
+  local ignored_dirs = {
+    '.git',
+    '**/tmux/plugins/**',
+    '**/zsh/plugins/**',
+    '**/yazi/flavors/**',
+    '**/node_modules/**',
+  }
+
+  local find_command = {
+    'rg',
+    '--files',
+    '--hidden',
+    '--follow',
+    '--no-ignore',
+  }
+  
+  for _, dir in ipairs(ignored_dirs) do
+    table.insert(find_command, '--glob')
+    table.insert(find_command, '!' .. dir)
+  end
+
+  local result = vim.fn.systemlist({
+    'git',
+    'rev-parse',
+    '--show-toplevel',
+  })
+
+  local cwd
+
+  if vim.v.shell_error == 0 and result[1] and result[1] ~= '' then
+    -- Inside a Git repository: search from its root
+    cwd = result[1]
+  else
+    -- Outside Git: use Neovim's current working directory
+    cwd = vim.fn.getcwd()
+  end
+
+  telescope.find_files({
+    cwd = cwd,
+    find_command = find_command
+  })
+end
+
+map(normalMode, '<leader>ff', telescope.find_files)
+map(normalMode, '<leader>fp', find_project_files)
+map(normalMode, '<leader>fk', telescope.keymaps)
+map(normalMode, '<leader>f/', function()
+  telescope.current_buffer_fuzzy_find({ previewer = false, prompt_title = 'Find Line' })
+end)
