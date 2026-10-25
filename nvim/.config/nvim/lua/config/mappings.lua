@@ -41,9 +41,32 @@ map(normalMode, '<leader>cs', '<cmd>source %<CR>', 'Source current file')
 map(normalMode, '<leader>ln', function() -- Toggle relative line numbers
   vim.wo.relativenumber = !vim.wo.relativenumber
 end)
-map(normalMode, '<leader><S-p>', function()
+map(normalMode, '<leader><S-p>', function() -- List hidden characters
   vim.o.list = !vim.o.list
 end)
+
+-- =================================
+-- Normal Mode
+-- =================================
+
+-- Insert newline outside of insert mode_
+map(normalMode, '<leader>o', 'o<Esc>')
+map(normalMode, '<leader>O', 'O<Esc>')
+
+-- Write and quit shortcuts
+map(normalMode, '<leader>w', '<cmd>w<CR>')
+map(normalMode, '<leader>q', '<cmd>q<CR>')
+map(normalMode, '<leader>Q', '<cmd>q!<CR>')
+
+-- Cancel selection highlighting on Esc
+map(normalMode, '<Esc>', '<cmd>nohl<CR>')
+
+-- Paste without overriding clipboard
+map(visualMode, 'p', '"_dp')
+
+-- =================================
+-- Buffers
+-- =================================
 
 -- Buffer navigation with Ctrl + hjkl
 map(normalMode, '<C-h>', '<C-w>h')
@@ -57,26 +80,39 @@ map(normalMode, '<C-J>', '<C-w>J')
 map(normalMode, '<C-K>', '<C-w>K')
 map(normalMode, '<C-L>', '<C-w>L')
 
--- Cancel selection highlighting on Esc
-map(normalMode, '<Esc>', '<cmd>nohl<CR>')
+-- =================================
+-- Navigation
+-- =================================
 
 -- Centre page on up and down
 map(normalMode, '<C-u>', '<C-u>zz')
 map(normalMode, '<C-d>', '<C-d>zz')
 
+-- Easier start/end line nav
+map(normalMode, 'H', "_")
+map(normalMode, 'L', "$")
+
 -- Centre search terms
-map (normalMode, 'n', 'nzz')
-map (normalMode, 'N', 'Nzz')
-
--- Move selected lines up or down
-map(visualMode, 'J', '>+1<CR>gv=gv')
-map(visualMode, 'K', '<-2<CR>gv=gv')
-
--- Paste without overriding clipboard
-map(visualMode, '<leader>p', '"_dp')
+map(normalMode, 'n', 'nzz')
+map(normalMode, 'N', 'Nzz')
 
 -- Disable arrow keys (we don't need em 😎)
 map(normalMode, '<left>', '<cmd>echo "Use h to move!!"<CR>')
 map(normalMode, '<down>', '<cmd>echo "Use j to move!!"<CR>')
 map(normalMode, '<up>', '<cmd>echo "Use k to move!!"<CR>')
 map(normalMode, '<right>', '<cmd>echo "Use l to move!!"<CR>')
+
+-- =================================
+-- Visual mode
+-- =================================
+
+-- Indent in visual mode
+map(visualMode, '>', '>gv')
+map(visualMode, '<', '<gv')
+
+-- Move selected lines up or down
+map(visualMode, 'J', ":m '>+1<CR>gv=gv")
+map(visualMode, 'K', ":m '<-2<CR>gv=gv")
+
+-- Select all
+map(normalMode, '<C-a>', 'ggVG')
