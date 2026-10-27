@@ -42,6 +42,8 @@ alias zshenv="$EDITOR $HOME/.zshenv"
 alias zshalias="$EDITOR $ZDOTDIR/alias.zsh"
 alias ghostconf="$EDITOR $XDG_CONFIG_HOME/ghostty/config.ghostty"
 
+alias q="exit"
+
 # Copy shortcuts
 alias cpy="pbcopy <" #MacOS
 

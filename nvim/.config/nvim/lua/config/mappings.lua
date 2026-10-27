@@ -119,6 +119,8 @@ map(normalMode, '<C-a>', 'ggVG')
 -- Plugins
 -- =================================
 
+map(normalMode, '<leader>l', '<cmd>Lazy<CR>')
+
 -- =========== Telescope ===========
 local telescope = require('telescope.builtin')
 
