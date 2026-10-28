@@ -82,3 +82,9 @@ local options = {
 for k, v in pairs(options) do
   vim.opt[k] = v
 end
+
+vim.diagnostic.config({
+        virtual_text = true,
+    underline = true,
+    signs = true,
+})

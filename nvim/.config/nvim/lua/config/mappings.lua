@@ -16,7 +16,7 @@ E.g.
 "<C-S-p>"  Ctrl + Shift + P
 "<A-C-j>"  Alt + Ctrl + J
 "<C-A-S-k>" Ctrl + Alt + Shift + K
-]]--
+]] --
 
 local normalMode = 'n'
 local visualMode = 'v'
@@ -25,17 +25,17 @@ local function map(mode, key, action, desc)
   vim.keymap.set(mode, key, action, {
     desc = desc,
     noremap = true, -- When executing action, do not resolve action to another keymap
-    silent = true -- Do not show the keymap in the command area at bottom of screen
+    silent = true   -- Do not show the keymap in the command area at bottom of screen
   })
 end
 
 -- Config keymaps
 map(normalMode, '<leader>cs', '<cmd>source %<CR>', 'Source current file')
 map(normalMode, '<leader>ln', function() -- Toggle relative line numbers
-  vim.wo.relativenumber = !vim.wo.relativenumber
+  vim.wo.relativenumber = ! vim.wo.relativenumber
 end)
 map(normalMode, '<leader><S-p>', function() -- List hidden characters
-  vim.o.list = !vim.o.list
+  vim.o.list = ! vim.o.list
 end)
 
 -- =================================
@@ -72,7 +72,7 @@ map(normalMode, '<C-S-H>', '<C-w>H')
 map(normalMode, '<C-S-J>', '<C-w>J')
 map(normalMode, '<C-S-K>', '<C-w>K')
 map(normalMode, '<C-S-L>', '<C-w>L')
-
+      
 -- =================================
 -- Navigation
 -- =================================
@@ -140,7 +140,7 @@ local function find_project_files()
     '--follow',
     '--no-ignore',
   }
-  
+
   for _, dir in ipairs(ignored_dirs) do
     table.insert(find_command, '--glob')
     table.insert(find_command, '!' .. dir)

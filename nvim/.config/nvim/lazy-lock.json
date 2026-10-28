@@ -1,6 +1,9 @@
 {
   "lazy.nvim": { "branch": "main", "commit": "306a05526ada86a7b30af95c5cc81ffba93fef97" },
+  "mason-lspconfig.nvim": { "branch": "main", "commit": "a338f44149f5673882c32629697d67b0c0547aec" },
+  "mason.nvim": { "branch": "main", "commit": "2a6940af80375532e5e9e7c1f2fc6319a1b7a69d" },
   "monokai-pro.nvim": { "branch": "master", "commit": "b69d8ed3ad05daab9c7e917e2d76adaa5476c1e9" },
+  "nvim-lspconfig": { "branch": "master", "commit": "4feaba4d3980032b3f62f3ba5df4de27fdf59cfd" },
   "nvim-web-devicons": { "branch": "master", "commit": "ec309a0eaff6ea967e58c275996155ab5c16938d" },
   "oil.nvim": { "branch": "master", "commit": "d3733d933833a0e59b813ecec99341527adf0c28" },
   "plenary.nvim": { "branch": "master", "commit": "74b06c6c75e4eeb3108ec01852001636d85a932b" },
