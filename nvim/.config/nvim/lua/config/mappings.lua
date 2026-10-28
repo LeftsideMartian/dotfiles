@@ -16,7 +16,7 @@ E.g.
 "<C-S-p>"  Ctrl + Shift + P
 "<A-C-j>"  Alt + Ctrl + J
 "<C-A-S-k>" Ctrl + Alt + Shift + K
-]]--
+]] --
 
 local normalMode = 'n'
 local visualMode = 'v'
@@ -25,17 +25,17 @@ local function map(mode, key, action, desc)
   vim.keymap.set(mode, key, action, {
     desc = desc,
     noremap = true, -- When executing action, do not resolve action to another keymap
-    silent = true -- Do not show the keymap in the command area at bottom of screen
+    silent = true   -- Do not show the keymap in the command area at bottom of screen
   })
 end
 
 -- Config keymaps
 map(normalMode, '<leader>cs', '<cmd>source %<CR>', 'Source current file')
 map(normalMode, '<leader>ln', function() -- Toggle relative line numbers
-  vim.wo.relativenumber = !vim.wo.relativenumber
+  vim.wo.relativenumber = ! vim.wo.relativenumber
 end)
 map(normalMode, '<leader><S-p>', function() -- List hidden characters
-  vim.o.list = !vim.o.list
+  vim.o.list = ! vim.o.list
 end)
 
 -- =================================
@@ -89,6 +89,9 @@ map(normalMode, 'L', "$")
 map(normalMode, 'n', 'nzz')
 map(normalMode, 'N', 'Nzz')
 
+-- Centre on EOF jump
+map(normalMode, 'G', 'Gzz')
+
 -- Disable arrow keys (we don't need em 😎)
 map(normalMode, '<left>', '<cmd>echo "Use h to move!!"<CR>')
 map(normalMode, '<down>', '<cmd>echo "Use j to move!!"<CR>')
@@ -113,7 +116,6 @@ map(visualMode, '<A-S-k>', ":t '<-1<CR>gv=gv")
 
 -- Select all
 map(normalMode, '<C-a>', 'ggVG')
-
 
 -- =================================
 -- Plugins
@@ -140,7 +142,7 @@ local function find_project_files()
     '--follow',
     '--no-ignore',
   }
-  
+
   for _, dir in ipairs(ignored_dirs) do
     table.insert(find_command, '--glob')
     table.insert(find_command, '!' .. dir)
@@ -174,3 +176,6 @@ map(normalMode, '<leader>fk', telescope.keymaps)
 map(normalMode, '<leader>f/', function()
   telescope.current_buffer_fuzzy_find({ previewer = false, prompt_title = 'Find Line' })
 end)
+
+-- =========== Oil ===========
+map(normalMode, '-', '<cmd>Oil<CR>')
