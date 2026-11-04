@@ -4,6 +4,9 @@ return {
   build = ':TSUpdate',
   config = function()
     local treesitter = require('nvim-treesitter')
+    treesitter.setup({
+      auto_install = true,
+    })
 
     local parsers = {
       'bash',

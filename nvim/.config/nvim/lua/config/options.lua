@@ -43,6 +43,7 @@ local options = {
   updatetime = 250,
 
   -- Timeout length determines how long the user has to input keymaps before the keymap is considered finished
+  timeout = true,
   timeoutlen = 1000,
 
   -- Splitting

@@ -31,31 +31,31 @@ end
 
 -- Config keymaps
 map(normalMode, '<leader>cs', '<cmd>source %<CR>', 'Source current file')
-map(normalMode, '<leader>ln', function() -- Toggle relative line numbers
+map(normalMode, '<leader>ln', function()
   vim.wo.relativenumber = ! vim.wo.relativenumber
-end)
-map(normalMode, '<leader><S-p>', function() -- List hidden characters
+end, 'Toggle relative line numbers')
+map(normalMode, '<leader><S-p>', function()
   vim.o.list = ! vim.o.list
-end)
+end, 'Show hidden characters')
 
 -- =================================
 -- Normal Mode
 -- =================================
 
 -- Insert newline outside of insert mode_
-map(normalMode, '<leader>o', 'o<Esc>')
-map(normalMode, '<leader>O', 'O<Esc>')
+map(normalMode, '<leader>o', 'o<Esc>', 'Insert line below')
+map(normalMode, '<leader>O', 'O<Esc>', 'Insert line above')
 
 -- Write and quit shortcuts
-map(normalMode, '<leader>w', '<cmd>w<CR>')
-map(normalMode, '<leader>q', '<cmd>q<CR>')
-map(normalMode, '<leader>Q', '<cmd>q!<CR>')
+map(normalMode, '<leader>w', '<cmd>w<CR>', 'Write')
+map(normalMode, '<leader>q', '<cmd>q<CR>', 'Quit')
+map(normalMode, '<leader>Q', '<cmd>q!<CR>', 'Quit without saving')
 
 -- Cancel selection highlighting on Esc
-map(normalMode, '<Esc>', '<cmd>nohl<CR>')
+map(normalMode, '<Esc>', '<cmd>nohl<CR>', 'Cancel highlighting')
 
 -- Paste without overriding clipboard
-map(visualMode, 'p', '"_dp')
+map(visualMode, 'p', '"_dp', 'Paste and maintain clipboard')
 
 -- =================================
 -- Buffers
@@ -82,15 +82,15 @@ map(normalMode, '<C-u>', '<C-u>zz')
 map(normalMode, '<C-d>', '<C-d>zz')
 
 -- Easier start/end line nav
-map(normalMode, 'H', "_")
-map(normalMode, 'L', "$")
+map(normalMode, 'H', "_", '')
+map(normalMode, 'L', "$", '')
 
 -- Centre search terms
-map(normalMode, 'n', 'nzz')
-map(normalMode, 'N', 'Nzz')
+map(normalMode, 'n', 'nzz', '')
+map(normalMode, 'N', 'Nzz', '')
 
 -- Centre on EOF jump
-map(normalMode, 'G', 'Gzz')
+map(normalMode, 'G', 'Gzz', '')
 
 -- Disable arrow keys (we don't need em 😎)
 map(normalMode, '<left>', '<cmd>echo "Use h to move!!"<CR>')
@@ -107,21 +107,21 @@ map(visualMode, '>', '>gv')
 map(visualMode, '<', '<gv')
 
 -- Move selected lines up or down
-map(visualMode, '<A-j>', ":m '>+1<CR>gv=gv")
-map(visualMode, '<A-k>', ":m '<-2<CR>gv=gv")
+map(visualMode, '<A-j>', ":m '>+1<CR>gv=gv", 'Move lines down')
+map(visualMode, '<A-k>', ":m '<-2<CR>gv=gv", 'Move lines up')
 
 -- Duplicate line
-map(visualMode, '<A-S-j>', ":t '><CR>gv=gv")
-map(visualMode, '<A-S-k>', ":t '<-1<CR>gv=gv")
+map(visualMode, '<A-S-j>', ":t '><CR>gv=gv", 'Duplicate lines down')
+map(visualMode, '<A-S-k>', ":t '<-1<CR>gv=gv", 'Duplicate lines up')
 
 -- Select all
-map(normalMode, '<C-a>', 'ggVG')
+map(normalMode, '<C-a>', 'ggVG', 'Select all')
 
 -- =================================
 -- Plugins
 -- =================================
 
-map(normalMode, '<leader>l', '<cmd>Lazy<CR>')
+map(normalMode, '<leader>l', '<cmd>Lazy<CR>', 'Lazy.nvim')
 
 -- =========== Telescope ===========
 local telescope = require('telescope.builtin')
@@ -170,12 +170,20 @@ local function find_project_files()
   })
 end
 
-map(normalMode, '<leader>ff', telescope.find_files)
-map(normalMode, '<leader>fp', find_project_files)
-map(normalMode, '<leader>fk', telescope.keymaps)
+map(normalMode, '<leader>ff', telescope.find_files, 'Find files')
+map(normalMode, '<leader>fp', find_project_files, 'Find project files')
+map(normalMode, '<leader>fk', telescope.keymaps, 'Find keymaps')
 map(normalMode, '<leader>f/', function()
   telescope.current_buffer_fuzzy_find({ previewer = false, prompt_title = 'Find Line' })
-end)
+end, 'Find line in buffer')
 
 -- =========== Oil ===========
-map(normalMode, '-', '<cmd>Oil<CR>')
+map(normalMode, '-', '<cmd>Oil<CR>', 'Open oil')
+
+-- =========== LSP ===========
+map(normalMode, 'gd', vim.lsp.buf.definition, 'Go to definition')
+map(normalMode, '<leader>cf', vim.lsp.buf.format, 'Format buffer')
+map(normalMode, '<leader>ca', vim.lsp.buf.code_action, 'Code action')
+map(normalMode, '<leader>cr', vim.lsp.buf.rename, 'Rename reference')
+map(normalMode, 'gr', vim.lsp.buf.references, 'Go to references')
+map(normalMode, 'gi', vim.lsp.buf.implementation, 'Go to implementation')
