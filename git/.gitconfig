@@ -1,8 +1,5 @@
 # ~/.gitconfig
 
-[user]
-	name = Matthew Adler
-	email = EMAIL_HERE
 [core]
 	editor = $EDITOR
 	pager = delta

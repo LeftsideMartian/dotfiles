@@ -79,6 +79,7 @@ export HOMEBREW_BAT=1
 # Disable fastfetch for now
 # fastfetch
 
-if [[ -z "$TMUX" && -o interactive ]]; then
+# If tmux is installed, start it on zsh open
+if [[ -n "$TMUX" && -o interactive ]]; then
   tmux
 fi
