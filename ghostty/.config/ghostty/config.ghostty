@@ -21,9 +21,11 @@ background-image-opacity = 0.1
 # Config
 # =========================
 
+auto-update = off
+
 # Command to run on ghostty startup (what shell to use)
 # Could replace this with a custom function if several startup items are needed?
-command = zsh
+command = ~/.local/bin/ghostty-tmux
 
 macos-option-as-alt = left
 macos-titlebar-proxy-icon = hidden

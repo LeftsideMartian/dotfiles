@@ -1,0 +1,21 @@
+#!/usr/bin/env bash
+
+# Initialise Homebrew.
+if [[ -x /opt/homebrew/bin/brew ]]; then
+    eval "$(/opt/homebrew/bin/brew shellenv)"
+fi
+
+# Fall back to zsh if tmux isn't installed.
+if ! command -v tmux >/dev/null 2>&1; then
+    exec zsh
+fi
+
+# Attach to an existing server or create a new session.
+if tmux has-session 2>/dev/null; then
+    tmux attach-session
+else
+    tmux new-session
+fi
+
+# Shut down the tmux server when Ghostty exits.
+tmux kill-server 2>/dev/null
